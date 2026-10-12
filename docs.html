@@ -3,24 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Файлы и методические указания | Кафедра АСУ РГРТУ</title>
+  <title>Раздел 4. Файлы и методические указания | Администрирование в ИС</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-flex">
-      <div class="brand">
-        <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
-        <span class="site-title">Администрирование в информационных системах</span>
-      </div>
-      <button id="theme-btn" class="btn-theme">🌓 Тема</button>
+      <a href="index.html" class="brand">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
+        <div class="brand-text">
+          <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
+          <span class="site-title">Администрирование в информационных системах</span>
+        </div>
+      </a>
+      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
     </div>
   </header>
 
   <nav class="site-nav">
     <div class="container nav-flex">
-      <a href="index.html" class="nav-link">О дисциплине</a>
+      <a href="about.html" class="nav-link">О дисциплине</a>
       <a href="lectures.html" class="nav-link">Теоретический курс</a>
       <a href="labs.html" class="nav-link">Лабораторный практикум</a>
       <a href="docs.html" class="nav-link active">Файлы и методические указания</a>
@@ -28,17 +32,24 @@
   </nav>
 
   <main class="container main-content">
+    <nav class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span class="sep">/</span>
+      <span>Раздел 4. Файлы и методические указания</span>
+    </nav>
+
     <div class="page-header">
-      <h1>Методические материалы и документы</h1>
-      <p class="lead">Документы курса, доступные для просмотра и загрузки.</p>
+      <h1>Раздел 4. Файлы и методические указания</h1>
+      <p class="lead">Электронный фонд официальных документов для подготовки к лабораторному практикуму и промежуточной аттестации.</p>
     </div>
 
-    <!-- ДОКУМЕНТЫ И РУКОВОДСТВА -->
+    <!-- ДОКУМЕНТЫ И РУКОВОДСТВА (10 файлов) -->
     <section class="card mb-2">
-      <h3>Документы и практические руководства</h3>
+      <span class="card-tag">Разделы 4.1</span>
+      <h2>Документы и методические пособия</h2>
       <div class="file-list mt-1">
         
-        <!-- 1. РПД -->
+        <!-- РПД -->
         <div class="file-item">
           <div class="file-badge">PDF</div>
           <div class="file-info">
@@ -48,7 +59,7 @@
           <a href="docs/rpd.pdf" class="btn-download" download>Открыть PDF</a>
         </div>
 
-        <!-- 2. Методическое обеспечение -->
+        <!-- Методическое обеспечение -->
         <div class="file-item">
           <div class="file-badge">PDF</div>
           <div class="file-info">
@@ -58,82 +69,82 @@
           <a href="docs/metod.pdf" class="btn-download" download>Открыть PDF</a>
         </div>
 
-        <!-- 3. ЛР 1 (Архивирование) -->
+        <!-- ЛР 1 (Архивирование) -->
         <div class="file-item">
           <div class="file-badge">PDF</div>
           <div class="file-info">
-            <strong>Лабораторная работа № 1: Архивирование и восстановление данных</strong>
-            <span>LR_1.pdf · Методические указания к симулятору SQL Server 2000</span>
+            <strong>Методические указания к ЛР 1: Архивирование и восстановление данных</strong>
+            <span>LR_1.pdf · Работа с симулятором SQL Server 2000</span>
           </div>
           <a href="docs/LR_1.pdf" class="btn-download" download>Открыть PDF</a>
         </div>
 
-        <!-- 4. ЛР 2 (Безопасность) -->
+        <!-- ЛР 2 (Безопасность) -->
         <div class="file-item">
           <div class="file-badge">PDF</div>
           <div class="file-info">
-            <strong>Лабораторная работа № 2: Управление учетными записями и аутентификация</strong>
-            <span>LR_2.pdf · Методические указания к имитатору NetSecurity.exe</span>
+            <strong>Методические указания к ЛР 2: Управление учетными записями и аутентификация</strong>
+            <span>LR_2.pdf · Работа с имитатором службы безопасности NetSecurity.exe</span>
           </div>
           <a href="docs/LR_2.pdf" class="btn-download" download>Открыть PDF</a>
         </div>
 
-        <!-- 5. ЛР 3, 4 (lab_3_4.pdf) -->
+        <!-- ЛР 3, 4 (lab_3_4.pdf) -->
         <div class="file-item">
           <div class="file-badge">PDF</div>
           <div class="file-info">
-            <strong>Лабораторные работы № 3, 4: Разрешение доменных имен и Active Directory</strong>
-            <span>lab_3_4.pdf · Методические указания к Imitation.exe и NetAdmin.exe</span>
+            <strong>Методические указания к ЛР 3 и 4: Разрешение доменных имен и Active Directory</strong>
+            <span>lab_3_4.pdf · Работа с оболочками Imitation.exe и NetAdmin.exe</span>
           </div>
           <a href="docs/lab_3_4.pdf" class="btn-download" download>Открыть PDF</a>
         </div>
 
-        <!-- 6. lab_3_new.doc -->
+        <!-- ЛР 3 и 4 (lab_3_new.doc) -->
         <div class="file-item">
           <div class="file-badge file-doc">DOC</div>
           <div class="file-info">
-            <strong>Лабораторные работы № 3, 4: Администрирование служб DHCP и DNS</strong>
+            <strong>Варианты заданий к ЛР 3 и 4: Администрирование служб DHCP и DNS</strong>
             <span>lab_3_new.doc · Варианты зон Zone 3–10, пулы адресов и параметры шлюзов</span>
           </div>
           <a href="docs/lab_3_new.doc" class="btn-download btn-secondary" download>Скачать DOC</a>
         </div>
 
-        <!-- 7. PR_3 (ЛР 6) -->
+        <!-- PR_3 (ЛР 6) -->
         <div class="file-item">
           <div class="file-badge">PDF</div>
           <div class="file-info">
-            <strong>Лабораторная работа № 6: Маршрутизатор</strong>
+            <strong>Методические указания к ЛР 6: Маршрутизатор</strong>
             <span>PR_3.pdf · Настройка маршрутизатора 1841 и L3-коммутатора 3560 в Cisco Packet Tracer</span>
           </div>
           <a href="docs/PR_3.pdf" class="btn-download" download>Открыть PDF</a>
         </div>
 
-        <!-- 8. PR_1 (ЛР 7) -->
+        <!-- PR_1 (ЛР 7) -->
         <div class="file-item">
           <div class="file-badge">PDF</div>
           <div class="file-info">
-            <strong>Лабораторная работа № 7: DHCP протокол</strong>
-            <span>PR_1.pdf · Практикум по настройке службы DHCP в Cisco Packet Tracer</span>
+            <strong>Методические указания к ЛР 7: DHCP протокол</strong>
+            <span>PR_1.pdf · Практикум по настройке пула и DHCP Relay в Cisco Packet Tracer</span>
           </div>
           <a href="docs/PR_1.pdf" class="btn-download" download>Открыть PDF</a>
         </div>
 
-        <!-- 9. PR_4 (ЛР 9) -->
+        <!-- PR_4 (ЛР 9) -->
         <div class="file-item">
           <div class="file-badge">PDF</div>
           <div class="file-info">
-            <strong>Лабораторная работа № 9: Статическая маршрутизация</strong>
+            <strong>Методические указания к ЛР 9: Статическая маршрутизация</strong>
             <span>PR_4.pdf · Настройка статических маршрутов в составной сети в Cisco Packet Tracer</span>
           </div>
           <a href="docs/PR_4.pdf" class="btn-download" download>Открыть PDF</a>
         </div>
 
-        <!-- 10. PR_2 (ЛР 11) -->
+        <!-- PR_2 (ЛР 11) -->
         <div class="file-item">
           <div class="file-badge">PDF</div>
           <div class="file-info">
-            <strong>Лабораторная работа № 11: Network Address Translation (NAT)</strong>
-            <span>PR_2.pdf · Настройка трансляции адресов локальной сети в Cisco Packet Tracer</span>
+            <strong>Методические указания к ЛР 11: Network Address Translation</strong>
+            <span>PR_2.pdf · Настройка трансляции адресов локальной сети (NAT/PAT) в Cisco Packet Tracer</span>
           </div>
           <a href="docs/PR_2.pdf" class="btn-download" download>Открыть PDF</a>
         </div>
@@ -143,7 +154,8 @@
 
     <!-- ВОПРОСЫ К ЭКЗАМЕНУ -->
     <section class="card">
-      <h3>Основные экзаменационные вопросы по дисциплине</h3>
+      <span class="card-tag">Раздел 4.2</span>
+      <h2>Вопросы к экзамену по дисциплине</h2>
       <ol class="ordered-list exam-grid mt-1">
         <li>Понятие администрирования. Элементы и функции администрирования сетевых ИС.</li>
         <li>Задачи, решаемые при администрировании ИС. Используемые процедуры.</li>
@@ -181,7 +193,8 @@
 
   <footer class="site-footer">
     <div class="container footer-content">
-      <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина · Кафедра АСУ</p>
+      <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
+      <p>Кафедра автоматизированных систем управления (АСУ)</p>
     </div>
   </footer>
 

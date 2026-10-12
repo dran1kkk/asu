@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Служба DNS | Администрирование в ИС</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-flex">
+      <a href="index.html" class="brand">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
+        <div class="brand-text">
+          <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
+          <span class="site-title">Администрирование в информационных системах</span>
+        </div>
+      </a>
+      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-flex">
+      <a href="about.html" class="nav-link">О дисциплине</a>
+      <a href="lectures.html" class="nav-link active">Теоретический курс</a>
+      <a href="labs.html" class="nav-link">Лабораторный практикум</a>
+      <a href="docs.html" class="nav-link">Файлы и методические указания</a>
+    </div>
+  </nav>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span class="sep">/</span>
+      <a href="lectures.html">Раздел 2. Теоретический курс</a>
+      <span class="sep">/</span>
+      <span>2.2 Службы имен DNS</span>
+    </nav>
+
+    <article class="card">
+      <div class="card-tag">Раздел 2.2 · Лекции 6 ч</div>
+      <h1>Службы регистрации и разрешения имен DNS</h1>
+      <p class="lead">Система доменных имен (Domain Name System, RFC 1035) представляет собой распределенную масштабируемую базу данных, обеспечивающую преобразование символических имен хостов в числовые сетевые IP-адреса и обратно.</p>
+
+      <h3>1. Иерархия пространства имен</h3>
+      <p>Пространство имен DNS организовано в виде инвертированного древовидного графа. Вершиной иерархии является корневой домен (root domain), обозначаемый точкой в конце полного доменного имени FQDN (Fully Qualified Domain Name):</p>
+      <ul class="bullet-list">
+        <li><strong>Корневой уровень (.):</strong> обслуживается 13 мировыми кластерами корневых серверов (от a.root-servers.net до m.root-servers.net).</li>
+        <li><strong>Домены 1-го уровня (TLD):</strong> организационные (com, edu, org, gov) и национальные (ru, by, su). Отдельно выделен домен arpa для обратного преобразования.</li>
+        <li><strong>Домены 2-го и последующих уровней:</strong> адресные зоны организаций (rsreu.ru, asu.rsreu.ru), внутри которых администраторы регистрируют конкретные хосты.</li>
+      </ul>
+
+      <h3>2. Зоны, первичные и вторичные серверы</h3>
+      <p>Административной единицей в системе DNS является <strong>зона</strong> — непрерывная часть доменного дерева, обслуживаемая сервером имен и хранящаяся в файле зоны (zone file):</p>
+      <ul class="bullet-list">
+        <li><strong>Первичный сервер (Master/Primary):</strong> хранит главный файл зоны, в который администратор вносит изменения.</li>
+        <li><strong>Вторичный сервер (Slave/Secondary):</strong> получает копию файла зоны с первичного сервера в процессе репликации (трансфер зоны). Служит для распределения нагрузки и отказоустойчивости.</li>
+        <li><strong>Сервер кэширования:</strong> не содержит локальных файлов зон, выполняет разрешение имен для клиентов и сохраняет результаты в оперативной памяти на время TTL.</li>
+      </ul>
+
+      <h3>3. Механизмы разрешения имен и Rlogin</h3>
+      <p>Клиентский резолвер (разборщик) направляет запрос локальному серверу DNS. Различают два метода обработки запросов:</p>
+      <ol class="ordered-list">
+        <li><strong>Рекурсивный опрос:</strong> клиент требует от сервера окончательный результат (точный IP-адрес либо ошибку несуществования). Сервер берет весь поиск на себя.</li>
+        <li><strong>Итеративный опрос:</strong> сервер возвращает клиенту наилучший известный ответ — адрес следующего авторитетного сервера в цепочке делегирования.</li>
+      </ol>
+      <p>При использовании терминальных протоколов (Rlogin, Telnet) сервер обязан выполнить обратную проверку подлинности: по IP-адресу подключившегося клиента через PTR-запрос в домене <code>in-addr.arpa</code> запрашивается его FQDN, после чего прямым A-запросом перепроверяется соответствие адреса.</p>
+
+      <h3>4. Основные ресурсные записи файла зоны</h3>
+      <div class="table-wrap">
+        <table class="info-table">
+          <thead>
+            <tr><th>Тип</th><th>Название</th><th>Назначение</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>SOA</code></td><td>Start of Authority</td><td>Определяет авторитетный сервер зоны, контакт администратора и таймеры репликации.</td></tr>
+            <tr><td><code>A</code></td><td>Host Address</td><td>Связывает символическое имя узла с 32-битным IPv4-адресом.</td></tr>
+            <tr><td><code>PTR</code></td><td>Pointer</td><td>Обратное разрешение IP-адреса в каноническое имя хоста в зоне in-addr.arpa.</td></tr>
+            <tr><td><code>NS</code></td><td>Name Server</td><td>Делегирует зону указанному авторитетному серверу имен.</td></tr>
+            <tr><td><code>CNAME</code></td><td>Canonical Name</td><td>Создает псевдоним (алиас) для уже существующей A-записи.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
+      <p>Кафедра автоматизированных систем управления (АСУ)</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

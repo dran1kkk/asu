@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная работа № 4 | Администрирование в ИС</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-flex">
+      <a href="index.html" class="brand">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
+        <div class="brand-text">
+          <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
+          <span class="site-title">Администрирование в информационных системах</span>
+        </div>
+      </a>
+      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-flex">
+      <a href="about.html" class="nav-link">О дисциплине</a>
+      <a href="lectures.html" class="nav-link">Теоретический курс</a>
+      <a href="labs.html" class="nav-link active">Лабораторный практикум</a>
+      <a href="docs.html" class="nav-link">Файлы и методические указания</a>
+    </div>
+  </nav>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span class="sep">/</span>
+      <a href="labs.html">Лабораторный практикум</a>
+      <span class="sep">/</span>
+      <a href="labs-emulators.html">3.1 Программные имитаторы</a>
+      <span class="sep">/</span>
+      <span>ЛР № 4: Active Directory и DHCP</span>
+    </nav>
+
+    <article class="card">
+      <div class="lab-header">
+        <div>
+          <span class="card-tag">Раздел 3.1.4 · Лабораторная работа № 4</span>
+          <h1>Настройка служб Active Directory, DNS и DHCP</h1>
+        </div>
+        <div class="btn-group">
+          <a href="docs/lab_3_4.pdf" class="btn-download" download>Открыть PDF</a>
+          <a href="docs/lab_3_new.doc" class="btn-download btn-sec" download>Скачать DOC</a>
+        </div>
+      </div>
+      
+      <p><strong>Цель работы:</strong> Изучение принципов установки и администрирования служб сетевой операционной системы. Приобретение практических навыков работы с мастером настройки Active Directory (dcpromo), диспетчером DNS и пулами службы DHCP.</p>
+      <p><strong>Программное обеспечение:</strong> Программа-симулятор NetAdmin.exe.</p>
+
+      <h3>Краткие теоретические положения</h3>
+      <p>Active Directory (AD DS) — централизованная база данных каталога, обеспечивающая единую точку входа и аутентификации в корпоративной сети. Домен выступает основной административной границей. Контроллер домена хранит базу NTDS.dit и реплицирует конфигурацию леса.</p>
+      <p>Протокол DHCP автоматизирует выдачу IP-адресов узлам на правах аренды из сконфигурированных областей (Scope). В домене Active Directory серверы DHCP подлежат обязательной авторизации администратором для предотвращения конфликтов адресации.</p>
+
+      <h3>Порядок выполнения работы</h3>
+      <ol class="ordered-list">
+        <li>Запустить NetAdmin.exe, в меню «Сервис» открыть «Эмулятор настройки Active Directory» и зарегистрироваться под именем Admin с паролем password.</li>
+        <li>Через командную строку виртуального рабочего стола запустить мастер dcpromo.exe.</li>
+        <li>Создать новое доменное дерево в новом лесу с полным DNS-именем corp.com и NetBIOS-именем CORP.</li>
+        <li>Указать пути размещения базы данных C:\Winnt\Ntds и общей папки Sysvol C:\Winnt\Sysvol.</li>
+        <li>Выбрать режим «Настроить и установить DNS вручную» для детального изучения конфигурации зон. Сохранить параметры окна «Сводка» для отчета.</li>
+        <li>После виртуальной перезагрузки сервера в диспетчере DNS добавить авторитетный сервер и настроить IP-адреса пересылки (192.168.1.1 и 192.168.2.1).</li>
+        <li>Перейти в режим «Настроить DHCP», в списке серверов выбрать сервер Admin и выполнить процедуру его авторизации (индикатор сменится с красного на зеленый, статус — «Работает»).</li>
+        <li>В окне «Мастер новой области действия» создать область (Scope) по номеру варианта (Area 1 – Area 10): ввести диапазон IP-адресов, маску подсети, исключения и обязательный IP-адрес маршрутизатора.</li>
+        <li>В закладке «Регистрация» выбрать пункт «Получить IP-адрес», выполнить аренду адресов клиентскими хостами и проверить таблицу «Параметры хоста».</li>
+        <li>Выполнить виртуальную передачу пакета данных между клиентами («Пакет отправлен») и проанализировать системный журнал событий.</li>
+      </ol>
+
+      <h3>Контрольные вопросы к защите отчета</h3>
+      <ul class="bullet-list">
+        <li>1. Чем отличаются режимы работы домена (смешанный и основной) и возможен ли обратный переход?</li>
+        <li>2. С какой целью выполняется процедура авторизации серверов DHCP в каталоге Active Directory?</li>
+        <li>3. Какие параметры передаются клиенту в составе области действия (Scope) помимо IP-адреса?</li>
+        <li>4. Что происходит при попытке клиента обновить аренду адреса из деактивированной области (сообщение DHCPNACK)?</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
+      <p>Кафедра автоматизированных систем управления (АСУ)</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

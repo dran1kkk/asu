@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Active Directory | Администрирование в ИС</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-flex">
+      <a href="index.html" class="brand">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
+        <div class="brand-text">
+          <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
+          <span class="site-title">Администрирование в информационных системах</span>
+        </div>
+      </a>
+      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-flex">
+      <a href="about.html" class="nav-link">О дисциплине</a>
+      <a href="lectures.html" class="nav-link active">Теоретический курс</a>
+      <a href="labs.html" class="nav-link">Лабораторный практикум</a>
+      <a href="docs.html" class="nav-link">Файлы и методические указания</a>
+    </div>
+  </nav>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span class="sep">/</span>
+      <a href="lectures.html">Раздел 2. Теоретический курс</a>
+      <span class="sep">/</span>
+      <span>2.5 Active Directory</span>
+    </nav>
+
+    <article class="card">
+      <div class="card-tag">Раздел 2.5 · Лекции 2 ч</div>
+      <h1>Базы данных администрирования. Служба Active Directory</h1>
+      <p class="lead">Active Directory Domain Services (AD DS) — распределенная иерархическая служба каталогов масштаба предприятия, предоставляющая централизованную базу данных сетевых ресурсов и единую точку аутентификации.</p>
+
+      <h3>1. Логическая архитектура каталога</h3>
+      <p>Логическое построение каталога не зависит от физического расположения серверов и сетевых коммутаторов:</p>
+      <ul class="bullet-list">
+        <li><strong>Организационное подразделение (OU):</strong> минимальный контейнер для группировки объектов (пользователей, компьютеров) внутри домена, к которому привязываются объекты групповой политики (GPO).</li>
+        <li><strong>Домен:</strong> базовая административная единица и граница безопасности, объединяющая объекты с общей базой данных NTDS.dit.</li>
+        <li><strong>Дерево доменов:</strong> совокупность одного или нескольких доменов, использующих единое непрерывное пространство имен DNS.</li>
+        <li><strong>Лес доменов:</strong> высшая граница безопасности каталога, объединяющая деревья доменов с общей схемой (Schema), конфигурацией и глобальным каталогом (Global Catalog).</li>
+      </ul>
+
+      <h3>2. Физическая архитектура и база данных</h3>
+      <p>Физически служба каталога функционирует на выделенных серверах — <strong>контроллерах домена (Domain Controllers)</strong>. База данных каталога размещается в файле <code>ntds.dit</code> (каталог <code>C:\Winnt\Ntds</code>) под управлением реляционного движка ESE (Extensible Storage Engine). Общие политики и скрипты входа реплицируются через защищенную системную папку <code>Sysvol</code>.</p>
+
+      <h3>3. Роли хозяев операций FSMO</h3>
+      <p>В Active Directory реализована многомастерная репликация, однако пять критических системных операций требуют абсолютной однозначности и закрепляются за конкретными контроллерами домена в виде ролей FSMO:</p>
+      <div class="table-wrap">
+        <table class="info-table">
+          <thead>
+            <tr><th>Масштаб роли</th><th>Наименование FSMO</th><th>Функциональное назначение</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>На весь лес</td><td>Schema Master</td><td>Управление изменениями в схеме каталога (добавление новых классов и атрибутов).</td></tr>
+            <tr><td>На весь лес</td><td>Domain Naming Master</td><td>Контроль уникальности имен при добавлении или удалении доменов из леса.</td></tr>
+            <tr><td>На домен</td><td>PDC Emulator</td><td>Синхронизация точного времени по NTP, немедленная обработка изменений паролей.</td></tr>
+            <tr><td>На домен</td><td>RID Master</td><td>Выделение пулов относительных идентификаторов RID контроллерам домена для генерации SID.</td></tr>
+            <tr><td>На домен</td><td>Infrastructure Master</td><td>Обновление и поддержание целостности междоменных связей объектов и групп.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
+      <p>Кафедра автоматизированных систем управления (АСУ)</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

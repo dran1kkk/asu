@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная работа № 7 | Администрирование в ИС</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-flex">
+      <a href="index.html" class="brand">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
+        <div class="brand-text">
+          <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
+          <span class="site-title">Администрирование в информационных системах</span>
+        </div>
+      </a>
+      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <div class="container nav-flex">
+      <a href="about.html" class="nav-link">О дисциплине</a>
+      <a href="lectures.html" class="nav-link">Теоретический курс</a>
+      <a href="labs.html" class="nav-link active">Лабораторный практикум</a>
+      <a href="docs.html" class="nav-link">Файлы и методические указания</a>
+    </div>
+  </nav>
+
+  <main class="container main-content">
+    <nav class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span class="sep">/</span>
+      <a href="labs.html">Лабораторный практикум</a>
+      <span class="sep">/</span>
+      <a href="labs-cisco.html">3.2 Практикум Cisco</a>
+      <span class="sep">/</span>
+      <span>ЛР № 7: DHCP протокол</span>
+    </nav>
+
+    <article class="card">
+      <div class="lab-header">
+        <div>
+          <span class="card-tag">Раздел 3.2.2 · Лабораторная работа № 7</span>
+          <h1>DHCP протокол и ретрансляция запросов (DHCP Relay)</h1>
+        </div>
+        <div class="btn-group">
+          <a href="docs/PR_1.pdf" class="btn-download" download>Открыть PDF</a>
+        </div>
+      </div>
+
+      <p><strong>Цель работы:</strong> Настроить автоматическое назначение IP-параметров хостам сети: сконфигурировать внутренний пул DHCP на маршрутизаторе Cisco 1841 и настроить агента ретрансляции ip helper-address на маршрутизаторе 2911 для обращения к выделенному серверу.</p>
+
+      <h3>Конфигурация оборудования:</h3>
+      <div class="code-terminal">
+        <pre><code>! 1. Пул адресов на маршрутизаторе 1841
+Router(config)# ip dhcp excluded-address 192.168.1.1 192.168.1.100
+Router(config)# ip dhcp pool LOCAL_POOL
+Router(dhcp-config)# network 192.168.1.0 255.255.255.0
+Router(dhcp-config)# default-router 192.168.1.1
+Router(dhcp-config)# dns-server 8.8.8.8
+Router(dhcp-config)# exit
+
+! 2. Настройка DHCP Relay на подынтерфейсе роутера 2911
+Router(config)# interface gigabitEthernet 0/0.2
+Router(config-subif)# encapsulation dot1Q 2
+Router(config-subif)# ip address 192.168.2.1 255.255.255.0
+Router(config-subif)# ip helper-address 192.168.4.2
+Router(config-subif)# exit</code></pre>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
+      <p>Кафедра автоматизированных систем управления (АСУ)</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

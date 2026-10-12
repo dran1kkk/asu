@@ -3,24 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Администрирование в ИС | Кафедра АСУ РГРТУ</title>
+  <title>Раздел 1. О дисциплине | Администрирование в ИС</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-flex">
-      <div class="brand">
-        <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
-        <span class="site-title">Администрирование в информационных системах</span>
-      </div>
+      <a href="index.html" class="brand">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
+        <div class="brand-text">
+          <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
+          <span class="site-title">Администрирование в информационных системах</span>
+        </div>
+      </a>
       <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
     </div>
   </header>
 
   <nav class="site-nav">
     <div class="container nav-flex">
-      <a href="index.html" class="nav-link active">О дисциплине</a>
+      <a href="about.html" class="nav-link active">О дисциплине</a>
       <a href="lectures.html" class="nav-link">Теоретический курс</a>
       <a href="labs.html" class="nav-link">Лабораторный практикум</a>
       <a href="docs.html" class="nav-link">Файлы и методические указания</a>
@@ -28,71 +32,194 @@
   </nav>
 
   <main class="container main-content">
-    <section class="hero-card">
-      <span class="badge">Направление 09.03.02 «Информационные системы и технологии»</span>
-      <h1>Администрирование в информационных системах</h1>
-      <p class="hero-desc">Учебно-методический комплекс кафедры АСУ РГРТУ. Включает рабочую программу дисциплины, практикум на базе учебных программ, лабораторные работы в Cisco Packet Tracer и архив методических изданий.</p>
-    </section>
+    <nav class="breadcrumbs">
+      <a href="index.html">Главная</a>
+      <span class="sep">/</span>
+      <span>Раздел 1. О дисциплине</span>
+    </nav>
 
+    <div class="page-header">
+      <h1>Раздел 1. О дисциплине</h1>
+      <p class="lead">Нормативный паспорт курса, дидактические цели, сведения о выпускающей кафедре АСУ и перечень профессиональных компетенций бакалавра.</p>
+    </div>
+
+    <!-- Блоки 1.1 и 1.2: Паспорт и Лектор -->
     <div class="grid-2col">
-      <div class="card card-equal">
-        <h3>Учебный план дисциплины (РПД)</h3>
-        <table class="info-table">
+      <!-- Раздел 1.1 -->
+      <section class="card">
+        <span class="card-tag">Раздел 1.1</span>
+        <h2>Паспорт дисциплины</h2>
+        <table class="info-table" style="margin-top: 0.8rem;">
           <tbody>
             <tr>
+              <td>Направление подготовки:</td>
+              <td>09.03.02 «Информационные системы и технологии»</td>
+            </tr>
+            <tr>
+              <td>Направленность (профиль):</td>
+              <td>Информационные системы в технике и технологиях</td>
+            </tr>
+            <tr>
               <td>Уровень образования:</td>
-              <td class="nowrap-cell"><strong>Бакалавриат (профиль «ИС в технике и технологиях»)</strong></td>
+              <td>Бакалавриат</td>
             </tr>
             <tr>
               <td>Семестр изучения:</td>
-              <td><strong>7 семестр (4 курс)</strong></td>
+              <td>7-й семестр (4-й курс)</td>
             </tr>
             <tr>
               <td>Трудоемкость:</td>
-              <td><strong>4 ЗЕТ (144 академических часа)</strong></td>
+              <td>4 ЗЕТ (144 академических часа)</td>
             </tr>
             <tr>
-              <td>Аудиторная нагрузка:</td>
-              <td><strong>32 ч лекции, 16 ч лаб., 16 ч практ.</strong></td>
+              <td>Лекционные занятия:</td>
+              <td>32 часа</td>
+            </tr>
+            <tr>
+              <td>Лабораторные работы:</td>
+              <td>16 часов</td>
+            </tr>
+            <tr>
+              <td>Практические занятия:</td>
+              <td>16 часов</td>
             </tr>
             <tr>
               <td>Самостоятельная работа:</td>
-              <td><strong>33 ч + 44.65 ч на контроль</strong></td>
+              <td>33 часа</td>
             </tr>
             <tr>
-              <td>Форма аттестации:</td>
-              <td><strong>Экзамен</strong></td>
+              <td>Итоговый контроль:</td>
+              <td>44,65 часа · Экзамен</td>
             </tr>
           </tbody>
         </table>
-      </div>
+      </section>
 
-      <div class="card card-equal person-card-wrapper">
-        <h3>Преподаватель дисциплины</h3>
-        <div class="person-content">
-          <div class="person-header">
-            <strong>Холопов Сергей Иванович</strong>
-            <span class="person-role">Заведующий кафедрой АСУ, кандидат технических наук, доцент</span>
+      <!-- Раздел 1.2 -->
+      <section class="card">
+        <span class="card-tag">Раздел 1.2</span>
+        <h2>Сведения о лекторе и кафедре</h2>
+        
+        <div class="teacher-block">
+          <div class="teacher-photo">
+            <img src="img/kholopov.jpg" alt="Холопов Сергей Иванович" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br>Холопов С.И.</div>';">
           </div>
-          <p class="person-bio">Разработчик РПД и автор методических комплексов по сетевому администрированию, службам DHCP, DNS и защите ИС.</p>
-          <div class="person-footer">
-            <span class="person-badge">Лектор и автор курса</span>
-            <span class="person-dept">Кафедра АСУ · РГРТУ</span>
+
+          <div class="teacher-info">
+            <strong class="teacher-name">Холопов Сергей Иванович</strong>
+            <span class="teacher-role">Заведующий кафедрой АСУ РГРТУ</span>
+            <p class="teacher-bio">
+              Кандидат технических наук, доцент. Окончил РРТИ в 1979 г. по специальности «Автоматизированные системы управления». Руководитель образовательной программы, ведущий лектор курсов системного и сетевого администрирования.
+            </p>
           </div>
         </div>
-      </div>
+
+        <div class="divider" style="margin-top: 1rem; padding-top: 0.8rem;">
+          <table class="info-table">
+            <tbody>
+              <tr>
+                <td>Кафедра:</td>
+                <td>Автоматизированных систем управления (АСУ)</td>
+              </tr>
+              <tr>
+                <td>Аудитория:</td>
+                <td>116а (главный учебный корпус РГРТУ)</td>
+              </tr>
+              <tr>
+                <td>Телефон:</td>
+                <td>+7 (4912) 72-03-36 (внутр. 19-42)</td>
+              </tr>
+              <tr>
+                <td>Электронная почта:</td>
+                <td>asu@rsreu.ru</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
 
+    <!-- Раздел 1.3 -->
     <section class="card mt-2">
-      <h3>Структура лабораторно-практической подготовки</h3>
-      <div class="grid-2col mt-1">
-        <div class="sub-block">
-          <h4>Часть 1. Программные имитаторы</h4>
-          <p>Освоение фундаментальных протоколов на учебных программах: <code>Imitation.exe</code> (исследование DNS-резолверов), <code>NetAdmin.exe</code> (Active Directory и DHCP), <code>NetSecurity.exe</code> (протокол Kerberos) и <code>SQLServer2000Emu.exe</code> (стратегии резервирования БД).</p>
+      <span class="card-tag">Раздел 1.3</span>
+      <h2>Цели, задачи и формируемые компетенции</h2>
+      
+      <div style="margin-top: 0.8rem;">
+        <h3>Цель и задачи курса</h3>
+        <p>
+          <strong>Основная цель дисциплины</strong> — приобретение теоретических знаний и формирование устойчивых прикладных навыков проектирования, развертывания, мониторинга и комплексной эксплуатации сетевых информационных систем корпоративного масштаба.
+        </p>
+        <p><strong>Задачи курса:</strong></p>
+        <ul class="bullet-list">
+          <li>Изучение архитектуры, компонентов и протоколов функционирования коммуникационных служб (DHCP, DNS).</li>
+          <li>Освоение методов централизованного управления безопасностью, учетными записями и службами каталогов (Active Directory, Kerberos v5).</li>
+          <li>Приобретение навыков обеспечения отказоустойчивости СУБД, резервного копирования и аварийного наката транзакций.</li>
+          <li>Практическое проектирование составных IP-сетей, сегментация виртуальных подсетей (VLAN) и маршрутизация на оборудовании Cisco.</li>
+        </ul>
+      </div>
+
+      <div class="divider">
+        <h3>Компетенции обучающегося, формируемые в результате освоения дисциплины</h3>
+        
+        <!-- ОПК-5 -->
+        <div class="sub-card">
+          <strong class="sub-card-title">
+            ОПК-5. Способен инсталлировать программное и аппаратное обеспечение для информационных и автоматизированных систем
+          </strong>
+          <span class="sub-card-subtitle">
+            ОПК-5.3. Выполняет настройку и конфигурирование программного и аппаратного обеспечения для информационных и автоматизированных систем
+          </span>
+          <ul class="bullet-list" style="margin-bottom: 0;">
+            <li><strong>Знать:</strong> принципы функционирования аппаратно-программных средств информационных и автоматизированных систем и механизмы их конфигурирования и настройки.</li>
+            <li><strong>Уметь:</strong> устанавливать и конфигурировать серверы коммуникационных служб и служб общего пользования.</li>
+            <li><strong>Владеть:</strong> приемами установки, конфигурирования, настройки и обслуживания компьютеров, элементов компьютерных сетей, инсталляции программного обеспечения.</li>
+          </ul>
         </div>
-        <div class="sub-block">
-          <h4>Часть 2. Сетевое моделирование в Cisco Packet Tracer</h4>
-          <p>Инженерное построение сетей на оборудовании Cisco (роутеры 1841/2911, коммутаторы 2960, L3-коммутаторы 3560): сегментация VLAN, sub-интерфейсы Router-on-a-Stick, динамический DHCP Relay, статическая маршрутизация и трансляция адресов NAT/PAT.</p>
+
+        <!-- ОПК-7 -->
+        <div class="sub-card">
+          <strong class="sub-card-title">
+            ОПК-7. Способен осуществлять выбор платформ и инструментальных программно-аппаратных средств для реализации информационных систем
+          </strong>
+          
+          <div>
+            <span class="sub-card-subtitle">
+              ОПК-7.1. Осуществляет выбор платформ для реализации информационных систем
+            </span>
+            <ul class="bullet-list" style="margin-bottom: 0;">
+              <li><strong>Знать:</strong> виды платформ для реализации информационных систем.</li>
+              <li><strong>Уметь:</strong> определять требования к аппаратному и программному обеспечениям компьютерной сети и ее элементов.</li>
+              <li><strong>Владеть:</strong> навыками формирования структуры и реализации информационной системы.</li>
+            </ul>
+          </div>
+
+          <div class="sub-card-divider">
+            <span class="sub-card-subtitle">
+              ОПК-7.2. Осуществляет выбор инструментальных программно-аппаратных средств для реализации информационных систем
+            </span>
+            <ul class="bullet-list" style="margin-bottom: 0;">
+              <li><strong>Знать:</strong> типы и свойства инструментальных программно-аппаратных средств, используемых для построения информационных систем.</li>
+              <li><strong>Уметь:</strong> решать задачи выбора платформы и программно-аппаратных средств для реализации информационных систем.</li>
+              <li><strong>Владеть:</strong> навыками выбора программно-аппаратных средств для компьютерных систем, баз данных, платформ администрирования.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Итоговые требования -->
+        <div class="sub-card">
+          <strong class="sub-card-title">В результате освоения дисциплины обучающийся должен:</strong>
+          
+          <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.93rem; margin-top: 0.4rem;">
+            <p style="margin: 0;">
+              <strong>Знать:</strong> архитектуры компьютерных сетей, аппаратных и программных средств, принципы реализации программно-аппаратных узлов информационных систем.
+            </p>
+            <p style="margin: 0;">
+              <strong>Уметь:</strong> работать за компьютером, анализировать потребности в аппаратном и программном обеспечении, определять требования к программному и аппаратному обеспечению.
+            </p>
+            <p style="margin: 0;">
+              <strong>Владеть:</strong> навыками системного и сетевого управления, использования современных средств информационных технологий.
+            </p>
+          </div>
         </div>
       </div>
     </section>
