@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Раздел 3. Лабораторный практикум | Администрирование в ИС</title>
   <link rel="icon" type="image/png" href="img/logo.png">
+  <script>try{if(localStorage.getItem('ais_theme')==='dark')document.documentElement.classList.add('dark-mode');}catch(e){}</script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,27 +13,27 @@
   <header class="site-header">
     <div class="container header-flex">
       <a href="index.html" class="brand">
-        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo" width="42" height="42">
         <div class="brand-text">
           <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
           <span class="site-title">Администрирование в информационных системах</span>
         </div>
       </a>
-      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
+      <button type="button" id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
     </div>
   </header>
 
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Основные разделы">
     <div class="container nav-flex">
       <a href="about.html" class="nav-link">О дисциплине</a>
       <a href="lectures.html" class="nav-link">Теоретический курс</a>
-      <a href="labs.html" class="nav-link active">Лабораторный практикум</a>
+      <a href="labs.html" class="nav-link active" aria-current="page">Лабораторный практикум</a>
       <a href="docs.html" class="nav-link">Файлы и методические указания</a>
     </div>
   </nav>
 
   <main class="container main-content">
-    <nav class="breadcrumbs">
+    <nav class="breadcrumbs" aria-label="Навигационная цепочка">
       <a href="index.html">Главная</a>
       <span class="sep">/</span>
       <span>Раздел 3. Лабораторный практикум</span>
@@ -64,10 +65,67 @@
         <span class="nav-card-link">Перейти к работам блока 3.2 →</span>
       </a>
     </div>
+
+    <!-- Интерактивная утилита: Калькулятор подсетей IPv4 / CIDR -->
+    <section class="card">
+      <span class="card-tag">Инструмент администратора</span>
+      <h2>Интерактивный калькулятор подсетей IPv4 / CIDR</h2>
+      <p class="lead lead-calc">
+        Утилита для быстрого расчета параметров адресного пространства при выполнении лабораторных работ по маршрутизации и настройке виртуальных подсетей (VLAN).
+      </p>
+
+      <div class="calc-grid">
+        <div class="calc-inputs">
+          <div class="calc-field">
+            <label for="calc-ip">IP-адрес хоста или сети:</label>
+            <input type="text" id="calc-ip" class="calc-input" value="192.168.1.1" placeholder="192.168.1.1">
+          </div>
+
+          <div class="calc-field">
+            <label for="calc-cidr-range">
+              Префикс маски (CIDR): <strong id="calc-cidr-val">/24</strong>
+            </label>
+            <input type="range" id="calc-cidr-range" min="8" max="30" value="24" class="calc-slider">
+          </div>
+        </div>
+
+        <div>
+          <table class="info-table table-flush">
+            <tbody>
+              <tr>
+                <td>Маска подсети (Subnet Mask):</td>
+                <td><code id="res-mask" class="calc-code">255.255.255.0</code></td>
+              </tr>
+              <tr>
+                <td>Обратная маска (Wildcard Mask):</td>
+                <td><code id="res-wildcard" class="calc-code">0.0.0.255</code></td>
+              </tr>
+              <tr>
+                <td>Адрес сети (Network ID):</td>
+                <td><code id="res-net" class="calc-code">192.168.1.0</code></td>
+              </tr>
+              <tr>
+                <td>Широковещательный адрес (Broadcast):</td>
+                <td><code id="res-bcast" class="calc-code">192.168.1.255</code></td>
+              </tr>
+              <tr>
+                <td>Диапазон доступных хостов:</td>
+                <td><code id="res-range" class="calc-code">192.168.1.1 — 192.168.1.254</code></td>
+              </tr>
+              <tr>
+                <td>Полезных хостов (Usable Hosts):</td>
+                <td><strong id="res-hosts">254</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
+    <div class="container">
       <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
       <p>Кафедра автоматизированных систем управления (АСУ)</p>
     </div>

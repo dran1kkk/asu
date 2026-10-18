@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Службы безопасности | Администрирование в ИС</title>
   <link rel="icon" type="image/png" href="img/logo.png">
+  <script>try{if(localStorage.getItem('ais_theme')==='dark')document.documentElement.classList.add('dark-mode');}catch(e){}</script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,27 +13,27 @@
   <header class="site-header">
     <div class="container header-flex">
       <a href="index.html" class="brand">
-        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo" width="42" height="42">
         <div class="brand-text">
           <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
           <span class="site-title">Администрирование в информационных системах</span>
         </div>
       </a>
-      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
+      <button type="button" id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
     </div>
   </header>
 
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Основные разделы">
     <div class="container nav-flex">
       <a href="about.html" class="nav-link">О дисциплине</a>
-      <a href="lectures.html" class="nav-link active">Теоретический курс</a>
+      <a href="lectures.html" class="nav-link active" aria-current="page">Теоретический курс</a>
       <a href="labs.html" class="nav-link">Лабораторный практикум</a>
       <a href="docs.html" class="nav-link">Файлы и методические указания</a>
     </div>
   </nav>
 
   <main class="container main-content">
-    <nav class="breadcrumbs">
+    <nav class="breadcrumbs" aria-label="Навигационная цепочка">
       <a href="index.html">Главная</a>
       <span class="sep">/</span>
       <a href="lectures.html">Раздел 2. Теоретический курс</a>
@@ -48,7 +49,7 @@
       <h3>1. Политики учетных записей домена</h3>
       <p>Администратор регламентирует доступ субъектов к ресурсам через настройку двух базовых политик:</p>
       <ul class="bullet-list">
-        <li><strong>Политика паролей:</strong> определяет минимальную длину пароля (рекомендуется от 6 до 8 символов со спецсимволами), максимальный срок действия пароля (принудительная регулярная смена), минимальный срок действия (защита от частой смены пароля в обход истории) и глубину запоминания старых паролей.</li>
+        <li><strong>Политика паролей:</strong> определяет минимальную длину пароля (в учебных примерах 6–8 символов, на практике сегодня требуют не менее 8–12), максимальный срок действия пароля (принудительная регулярная смена), минимальный срок действия (защита от частой смены пароля в обход истории) и глубину запоминания старых паролей.</li>
         <li><strong>Политика блокирования:</strong> определяет пороговое число неудачных попыток входа, после которого учетная запись блокируется, время блокирования в минутах (значение 0 означает разблокировку только администратором) и интервал сброса счетчика неудачных попыток.</li>
       </ul>
 
@@ -57,7 +58,7 @@
       
       <h4>Этапы аутентификации:</h4>
       <ol class="ordered-list">
-        <li><strong>Запрос TGT:</strong> при первичном входе пользователь отправляет запрос на сервер аутентификации AS. В ответ возвращается билет TGT (Ticket-Granting Ticket), зашифрованный секретным ключом пользователя.</li>
+        <li><strong>Запрос TGT:</strong> при первичном входе пользователь отправляет запрос на сервер аутентификации AS. В ответ возвращается билет TGT (Ticket-Granting Ticket), зашифрованный ключом службы KDC, и сеансовый ключ, зашифрованный секретным ключом пользователя.</li>
         <li><strong>Запрос сеансового билета:</strong> при обращении к ресурсу клиент отправляет TGT службе выдачи билетов TGS контроллера домена.</li>
         <li><strong>Выдача билета к сервису:</strong> служба TGS проверяет права и возвращает сеансовый билет (Session Ticket), зашифрованный долговременным ключом целевого сервера.</li>
         <li><strong>Предъявление билета:</strong> клиент передает сеансовый билет серверу, который расшифровывает его, проверяет метки времени и предоставляет доступ.</li>
@@ -68,13 +69,13 @@
       <ul class="bullet-list">
         <li><code>INITIAL</code> — указывает на то, что билет является первичным билетом-запросом.</li>
         <li><code>FORWARDABLE</code> — разрешает перенаправление билета на другой узел для выполнения задач от имени пользователя.</li>
-        <li><code>RENEWABLE</code> — разрешает периодическое обновление сеансового ключа без повторного ввода пароля пользователем.</li>
+        <li><code>RENEWABLE</code> — разрешает продлевать срок действия билета без повторного ввода пароля пользователем.</li>
       </ul>
     </article>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
+    <div class="container">
       <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
       <p>Кафедра автоматизированных систем управления (АСУ)</p>
     </div>

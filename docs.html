@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Раздел 4. Файлы и методические указания | Администрирование в ИС</title>
   <link rel="icon" type="image/png" href="img/logo.png">
+  <script>try{if(localStorage.getItem('ais_theme')==='dark')document.documentElement.classList.add('dark-mode');}catch(e){}</script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,27 +13,27 @@
   <header class="site-header">
     <div class="container header-flex">
       <a href="index.html" class="brand">
-        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo" width="42" height="42">
         <div class="brand-text">
           <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
           <span class="site-title">Администрирование в информационных системах</span>
         </div>
       </a>
-      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
+      <button type="button" id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
     </div>
   </header>
 
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Основные разделы">
     <div class="container nav-flex">
       <a href="about.html" class="nav-link">О дисциплине</a>
       <a href="lectures.html" class="nav-link">Теоретический курс</a>
       <a href="labs.html" class="nav-link">Лабораторный практикум</a>
-      <a href="docs.html" class="nav-link active">Файлы и методические указания</a>
+      <a href="docs.html" class="nav-link active" aria-current="page">Файлы и методические указания</a>
     </div>
   </nav>
 
   <main class="container main-content">
-    <nav class="breadcrumbs">
+    <nav class="breadcrumbs" aria-label="Навигационная цепочка">
       <a href="index.html">Главная</a>
       <span class="sep">/</span>
       <span>Раздел 4. Файлы и методические указания</span>
@@ -45,7 +46,7 @@
 
     <!-- ДОКУМЕНТЫ И РУКОВОДСТВА (10 файлов) -->
     <section class="card mb-2">
-      <span class="card-tag">Разделы 4.1</span>
+      <span class="card-tag">Раздел 4.1</span>
       <h2>Документы и методические пособия</h2>
       <div class="file-list mt-1">
         
@@ -104,7 +105,7 @@
           <div class="file-badge file-doc">DOC</div>
           <div class="file-info">
             <strong>Варианты заданий к ЛР 3 и 4: Администрирование служб DHCP и DNS</strong>
-            <span>lab_3_new.doc · Варианты зон Zone 3–10, пулы адресов и параметры шлюзов</span>
+            <span>lab_3_new.doc · Варианты зон Zone 1–10, пулы адресов и параметры шлюзов</span>
           </div>
           <a href="docs/lab_3_new.doc" class="btn-download btn-secondary" download>Скачать DOC</a>
         </div>
@@ -156,19 +157,19 @@
     <section class="card">
       <span class="card-tag">Раздел 4.2</span>
       <h2>Вопросы к экзамену по дисциплине</h2>
-      <ol class="ordered-list exam-grid mt-1">
+      <ol class="ordered-list mt-1">
         <li>Понятие администрирования. Элементы и функции администрирования сетевых ИС.</li>
         <li>Задачи, решаемые при администрировании ИС. Используемые процедуры.</li>
         <li>Планирование эффективной рабочей среды.</li>
         <li>Технические службы администрирования ИС.</li>
         <li>Способы построения сетей и управления ими. Администрирование сетевых операционных систем.</li>
-        <li>Основы ТСР/ІР. ІР-адресация. Маска подсети.</li>
+        <li>Основы TCP/IP. IP-адресация. Маска подсети.</li>
         <li>Назначение службы DHCP. Компоненты DHCP.</li>
-        <li>Процесс выдачи ІР-адреса. Алгоритм выбора адреса.</li>
-        <li>Обнаружение конфликтов ІР-адресации. Обновление IP-адреса, отклонение обновления и негативное подтверждение.</li>
+        <li>Процесс выдачи IP-адреса. Алгоритм выбора адреса.</li>
+        <li>Обнаружение конфликтов IP-адресации. Обновление IP-адреса, отклонение обновления и негативное подтверждение.</li>
         <li>Установка и настройка сервера DHCP. Авторизация серверов DHCP.</li>
         <li>Создание области действия DHCP. Настройка конфигурационных параметров службы DHCP.</li>
-        <li>Активация и деактивация областей DHCР. Документирование информации в журнале службы DHCP. Проверка и обновление конфигурации клиента DHCP.</li>
+        <li>Активация и деактивация областей DHCP. Документирование информации в журнале службы DHCP. Проверка и обновление конфигурации клиента DHCP.</li>
         <li>Домены и разрешение имен. Система доменных имен DNS.</li>
         <li>DNS и разрешение имен. Зоны DNS. Серверы DNS.</li>
         <li>Отказоустойчивость и распределение нагрузки.</li>
@@ -192,7 +193,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
+    <div class="container">
       <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
       <p>Кафедра автоматизированных систем управления (АСУ)</p>
     </div>

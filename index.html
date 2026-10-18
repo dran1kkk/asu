@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Раздел 1. О дисциплине | Администрирование в ИС</title>
+  <title>Главная | Администрирование в информационных системах</title>
   <link rel="icon" type="image/png" href="img/logo.png">
+  <script>try{if(localStorage.getItem('ais_theme')==='dark')document.documentElement.classList.add('dark-mode');}catch(e){}</script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,19 +13,19 @@
   <header class="site-header">
     <div class="container header-flex">
       <a href="index.html" class="brand">
-        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo" width="42" height="42">
         <div class="brand-text">
           <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
           <span class="site-title">Администрирование в информационных системах</span>
         </div>
       </a>
-      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
+      <button type="button" id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
     </div>
   </header>
 
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Основные разделы">
     <div class="container nav-flex">
-      <a href="about.html" class="nav-link active">О дисциплине</a>
+      <a href="about.html" class="nav-link">О дисциплине</a>
       <a href="lectures.html" class="nav-link">Теоретический курс</a>
       <a href="labs.html" class="nav-link">Лабораторный практикум</a>
       <a href="docs.html" class="nav-link">Файлы и методические указания</a>
@@ -32,201 +33,127 @@
   </nav>
 
   <main class="container main-content">
-    <nav class="breadcrumbs">
-      <a href="index.html">Главная</a>
-      <span class="sep">/</span>
-      <span>Раздел 1. О дисциплине</span>
-    </nav>
+    
+    <!-- Приветственный Hero-баннер -->
+    <section class="hero-card fade-in">
+      <div class="semester-badge">
+        <span class="status-dot"></span>
+        <span id="semester-status">Загрузка статуса семестра...</span>
+      </div>
+      <h1 class="hero-title">Образовательный портал дисциплины</h1>
+      <p class="lead">
+        Единое учебно-методическое пространство для студентов направления 09.03.02 «Информационные системы и технологии». 
+        Здесь собраны лекционные материалы по сетевым службам Windows Server, архитектуре Active Directory, отказоустойчивости СУБД и практические руководства по конфигурированию оборудования Cisco.
+      </p>
+    </section>
 
-    <div class="page-header">
-      <h1>Раздел 1. О дисциплине</h1>
-      <p class="lead">Нормативный паспорт курса, дидактические цели, сведения о выпускающей кафедре АСУ и перечень профессиональных компетенций бакалавра.</p>
+    <!-- Интерактивные карточки разделов с 3D Tilt & Spotlight -->
+    <div class="nav-grid">
+      <a href="about.html" class="nav-card tilt-card fade-in">
+        <div>
+          <span class="card-tag">Раздел 1</span>
+          <h3>О дисциплине</h3>
+          <p>Нормативный паспорт курса, сетка часов, сведения о лекторе, перечень формируемых компетенций (ОПК-5, ОПК-7).</p>
+        </div>
+        <span class="nav-card-link">Перейти к паспорту курса →</span>
+      </a>
+
+      <a href="lectures.html" class="nav-card tilt-card fade-in">
+        <div>
+          <span class="card-tag">Раздел 2</span>
+          <h3>Теоретический курс</h3>
+          <p>Конспекты лекций по протоколам DHCP и DNS, службе каталогов Active Directory, аутентификации Kerberos и резервному копированию баз данных.</p>
+        </div>
+        <span class="nav-card-link">Открыть лекции и тренажер →</span>
+      </a>
+
+      <a href="labs.html" class="nav-card tilt-card fade-in">
+        <div>
+          <span class="card-tag">Раздел 3</span>
+          <h3>Лабораторный практикум</h3>
+          <p>Практические работы по развертыванию сетевой инфраструктуры в виртуальных средах и маршрутизации пакетного трафика в Cisco Packet Tracer.</p>
+        </div>
+        <span class="nav-card-link">Перейти к лабораторным →</span>
+      </a>
+
+      <a href="docs.html" class="nav-card tilt-card fade-in">
+        <div>
+          <span class="card-tag">Раздел 4</span>
+          <h3>Файлы и методические указания</h3>
+          <p>Электронные методические пособия в формате PDF, индивидуальные варианты заданий, справочники команд и шаблоны отчетов.</p>
+        </div>
+        <span class="nav-card-link">Скачать материалы →</span>
+      </a>
     </div>
 
-    <!-- Блоки 1.1 и 1.2: Паспорт и Лектор -->
-    <div class="grid-2col">
-      <!-- Раздел 1.1 -->
-      <section class="card">
-        <span class="card-tag">Раздел 1.1</span>
-        <h2>Паспорт дисциплины</h2>
-        <table class="info-table" style="margin-top: 0.8rem;">
-          <tbody>
-            <tr>
-              <td>Направление подготовки:</td>
-              <td>09.03.02 «Информационные системы и технологии»</td>
-            </tr>
-            <tr>
-              <td>Направленность (профиль):</td>
-              <td>Информационные системы в технике и технологиях</td>
-            </tr>
-            <tr>
-              <td>Уровень образования:</td>
-              <td>Бакалавриат</td>
-            </tr>
-            <tr>
-              <td>Семестр изучения:</td>
-              <td>7-й семестр (4-й курс)</td>
-            </tr>
-            <tr>
-              <td>Трудоемкость:</td>
-              <td>4 ЗЕТ (144 академических часа)</td>
-            </tr>
-            <tr>
-              <td>Лекционные занятия:</td>
-              <td>32 часа</td>
-            </tr>
-            <tr>
-              <td>Лабораторные работы:</td>
-              <td>16 часов</td>
-            </tr>
-            <tr>
-              <td>Практические занятия:</td>
-              <td>16 часов</td>
-            </tr>
-            <tr>
-              <td>Самостоятельная работа:</td>
-              <td>33 часа</td>
-            </tr>
-            <tr>
-              <td>Итоговый контроль:</td>
-              <td>44,65 часа · Экзамен</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Раздел 1.2 -->
-      <section class="card">
-        <span class="card-tag">Раздел 1.2</span>
-        <h2>Сведения о лекторе и кафедре</h2>
-        
-        <div class="teacher-block">
-          <div class="teacher-photo">
-            <img src="img/kholopov.jpg" alt="Холопов Сергей Иванович" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br>Холопов С.И.</div>';">
-          </div>
-
-          <div class="teacher-info">
-            <strong class="teacher-name">Холопов Сергей Иванович</strong>
-            <span class="teacher-role">Заведующий кафедрой АСУ РГРТУ</span>
-            <p class="teacher-bio">
-              Кандидат технических наук, доцент. Окончил РРТИ в 1979 г. по специальности «Автоматизированные системы управления». Руководитель образовательной программы, ведущий лектор курсов системного и сетевого администрирования.
-            </p>
-          </div>
+    <!-- Интерактивный трекер прогресса лабораторных работ -->
+    <section class="card tracker-card fade-in">
+      <div class="tracker-header">
+        <div>
+          <span class="card-tag">Личный прогресс</span>
+          <h2>Трекер выполнения лабораторного практикума</h2>
+          <p class="tracker-sub">Отмечайте сданные работы — прогресс автоматически сохраняется в вашем браузере.</p>
         </div>
-
-        <div class="divider" style="margin-top: 1rem; padding-top: 0.8rem;">
-          <table class="info-table">
-            <tbody>
-              <tr>
-                <td>Кафедра:</td>
-                <td>Автоматизированных систем управления (АСУ)</td>
-              </tr>
-              <tr>
-                <td>Аудитория:</td>
-                <td>116а (главный учебный корпус РГРТУ)</td>
-              </tr>
-              <tr>
-                <td>Телефон:</td>
-                <td>+7 (4912) 72-03-36 (внутр. 19-42)</td>
-              </tr>
-              <tr>
-                <td>Электронная почта:</td>
-                <td>asu@rsreu.ru</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="tracker-stats">
+          <span id="tracker-count" class="tracker-percent">0 / 8 (0%)</span>
+          <button type="button" id="tracker-reset" class="btn-reset" title="Сбросить отметки">Сбросить</button>
         </div>
-      </section>
-    </div>
-
-    <!-- Раздел 1.3 -->
-    <section class="card mt-2">
-      <span class="card-tag">Раздел 1.3</span>
-      <h2>Цели, задачи и формируемые компетенции</h2>
-      
-      <div style="margin-top: 0.8rem;">
-        <h3>Цель и задачи курса</h3>
-        <p>
-          <strong>Основная цель дисциплины</strong> — приобретение теоретических знаний и формирование устойчивых прикладных навыков проектирования, развертывания, мониторинга и комплексной эксплуатации сетевых информационных систем корпоративного масштаба.
-        </p>
-        <p><strong>Задачи курса:</strong></p>
-        <ul class="bullet-list">
-          <li>Изучение архитектуры, компонентов и протоколов функционирования коммуникационных служб (DHCP, DNS).</li>
-          <li>Освоение методов централизованного управления безопасностью, учетными записями и службами каталогов (Active Directory, Kerberos v5).</li>
-          <li>Приобретение навыков обеспечения отказоустойчивости СУБД, резервного копирования и аварийного наката транзакций.</li>
-          <li>Практическое проектирование составных IP-сетей, сегментация виртуальных подсетей (VLAN) и маршрутизация на оборудовании Cisco.</li>
-        </ul>
       </div>
 
-      <div class="divider">
-        <h3>Компетенции обучающегося, формируемые в результате освоения дисциплины</h3>
-        
-        <!-- ОПК-5 -->
-        <div class="sub-card">
-          <strong class="sub-card-title">
-            ОПК-5. Способен инсталлировать программное и аппаратное обеспечение для информационных и автоматизированных систем
-          </strong>
-          <span class="sub-card-subtitle">
-            ОПК-5.3. Выполняет настройку и конфигурирование программного и аппаратного обеспечения для информационных и автоматизированных систем
-          </span>
-          <ul class="bullet-list" style="margin-bottom: 0;">
-            <li><strong>Знать:</strong> принципы функционирования аппаратно-программных средств информационных и автоматизированных систем и механизмы их конфигурирования и настройки.</li>
-            <li><strong>Уметь:</strong> устанавливать и конфигурировать серверы коммуникационных служб и служб общего пользования.</li>
-            <li><strong>Владеть:</strong> приемами установки, конфигурирования, настройки и обслуживания компьютеров, элементов компьютерных сетей, инсталляции программного обеспечения.</li>
-          </ul>
-        </div>
+      <!-- Полоса прогресса -->
+      <div class="progress-bar-bg">
+        <div id="tracker-bar" class="progress-bar-fill"></div>
+      </div>
 
-        <!-- ОПК-7 -->
-        <div class="sub-card">
-          <strong class="sub-card-title">
-            ОПК-7. Способен осуществлять выбор платформ и инструментальных программно-аппаратных средств для реализации информационных систем
-          </strong>
-          
-          <div>
-            <span class="sub-card-subtitle">
-              ОПК-7.1. Осуществляет выбор платформ для реализации информационных систем
-            </span>
-            <ul class="bullet-list" style="margin-bottom: 0;">
-              <li><strong>Знать:</strong> виды платформ для реализации информационных систем.</li>
-              <li><strong>Уметь:</strong> определять требования к аппаратному и программному обеспечениям компьютерной сети и ее элементов.</li>
-              <li><strong>Владеть:</strong> навыками формирования структуры и реализации информационной системы.</li>
-            </ul>
-          </div>
-
-          <div class="sub-card-divider">
-            <span class="sub-card-subtitle">
-              ОПК-7.2. Осуществляет выбор инструментальных программно-аппаратных средств для реализации информационных систем
-            </span>
-            <ul class="bullet-list" style="margin-bottom: 0;">
-              <li><strong>Знать:</strong> типы и свойства инструментальных программно-аппаратных средств, используемых для построения информационных систем.</li>
-              <li><strong>Уметь:</strong> решать задачи выбора платформы и программно-аппаратных средств для реализации информационных систем.</li>
-              <li><strong>Владеть:</strong> навыками выбора программно-аппаратных средств для компьютерных систем, баз данных, платформ администрирования.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Итоговые требования -->
-        <div class="sub-card">
-          <strong class="sub-card-title">В результате освоения дисциплины обучающийся должен:</strong>
-          
-          <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.93rem; margin-top: 0.4rem;">
-            <p style="margin: 0;">
-              <strong>Знать:</strong> архитектуры компьютерных сетей, аппаратных и программных средств, принципы реализации программно-аппаратных узлов информационных систем.
-            </p>
-            <p style="margin: 0;">
-              <strong>Уметь:</strong> работать за компьютером, анализировать потребности в аппаратном и программном обеспечении, определять требования к программному и аппаратному обеспечению.
-            </p>
-            <p style="margin: 0;">
-              <strong>Владеть:</strong> навыками системного и сетевого управления, использования современных средств информационных технологий.
-            </p>
-          </div>
-        </div>
+      <!-- Сетка чекбоксов лабораторных -->
+      <div class="tracker-grid" id="tracker-grid">
+        <label class="tracker-item">
+          <input type="checkbox" data-lab="lab1">
+          <span class="tracker-box">✓</span>
+          <span class="tracker-label"><strong>ЛР №1</strong> Архивирование данных</span>
+        </label>
+        <label class="tracker-item">
+          <input type="checkbox" data-lab="lab2">
+          <span class="tracker-box">✓</span>
+          <span class="tracker-label"><strong>ЛР №2</strong> Учетные записи и Kerberos</span>
+        </label>
+        <label class="tracker-item">
+          <input type="checkbox" data-lab="lab3">
+          <span class="tracker-box">✓</span>
+          <span class="tracker-label"><strong>ЛР №3</strong> DNS и адресация TCP/IP</span>
+        </label>
+        <label class="tracker-item">
+          <input type="checkbox" data-lab="lab4">
+          <span class="tracker-box">✓</span>
+          <span class="tracker-label"><strong>ЛР №4</strong> Настройка DHCP и AD</span>
+        </label>
+        <label class="tracker-item">
+          <input type="checkbox" data-lab="lab6">
+          <span class="tracker-box">✓</span>
+          <span class="tracker-label"><strong>ЛР №6</strong> Маршрутизация VLAN</span>
+        </label>
+        <label class="tracker-item">
+          <input type="checkbox" data-lab="lab7">
+          <span class="tracker-box">✓</span>
+          <span class="tracker-label"><strong>ЛР №7</strong> DHCP в Cisco Packet Tracer</span>
+        </label>
+        <label class="tracker-item">
+          <input type="checkbox" data-lab="lab9">
+          <span class="tracker-box">✓</span>
+          <span class="tracker-label"><strong>ЛР №9</strong> Статическая маршрутизация</span>
+        </label>
+        <label class="tracker-item">
+          <input type="checkbox" data-lab="lab11">
+          <span class="tracker-box">✓</span>
+          <span class="tracker-label"><strong>ЛР №11</strong> Network Address Translation</span>
+        </label>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
+    <div class="container">
       <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
       <p>Кафедра автоматизированных систем управления (АСУ)</p>
     </div>
