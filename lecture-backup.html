@@ -13,27 +13,27 @@
   <header class="site-header">
     <div class="container header-flex">
       <a href="index.html" class="brand">
-        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo" width="42" height="42">
         <div class="brand-text">
           <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
           <span class="site-title">Администрирование в информационных системах</span>
         </div>
       </a>
-      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
+      <button type="button" id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
     </div>
   </header>
 
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Основные разделы">
     <div class="container nav-flex">
       <a href="about.html" class="nav-link">О дисциплине</a>
-      <a href="lectures.html" class="nav-link active">Теоретический курс</a>
+      <a href="lectures.html" class="nav-link active" aria-current="page">Теоретический курс</a>
       <a href="labs.html" class="nav-link">Лабораторный практикум</a>
       <a href="docs.html" class="nav-link">Файлы и методические указания</a>
     </div>
   </nav>
 
   <main class="container main-content">
-    <nav class="breadcrumbs">
+    <nav class="breadcrumbs" aria-label="Навигационная цепочка">
       <a href="index.html">Главная</a>
       <span class="sep">/</span>
       <a href="lectures.html">Раздел 2. Теоретический курс</a>
@@ -75,7 +75,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
+    <div class="container">
       <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
       <p>Кафедра автоматизированных систем управления (АСУ)</p>
     </div>
