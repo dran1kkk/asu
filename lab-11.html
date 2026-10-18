@@ -13,27 +13,27 @@
   <header class="site-header">
     <div class="container header-flex">
       <a href="index.html" class="brand">
-        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo" width="42" height="42">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
         <div class="brand-text">
           <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
           <span class="site-title">Администрирование в информационных системах</span>
         </div>
       </a>
-      <button type="button" id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
+      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
     </div>
   </header>
 
-  <nav class="site-nav" aria-label="Основные разделы">
+  <nav class="site-nav">
     <div class="container nav-flex">
       <a href="about.html" class="nav-link">О дисциплине</a>
       <a href="lectures.html" class="nav-link">Теоретический курс</a>
-      <a href="labs.html" class="nav-link active" aria-current="page">Лабораторный практикум</a>
+      <a href="labs.html" class="nav-link active">Лабораторный практикум</a>
       <a href="docs.html" class="nav-link">Файлы и методические указания</a>
     </div>
   </nav>
 
   <main class="container main-content">
-    <nav class="breadcrumbs" aria-label="Навигационная цепочка">
+    <nav class="breadcrumbs">
       <a href="index.html">Главная</a>
       <span class="sep">/</span>
       <a href="labs.html">Лабораторный практикум</a>
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <p><strong>Цель работы:</strong> Реализовать трансляцию локальных частных IP-адресов в один публичный адрес внешнего интерфейса с перегрузкой по портам (PAT overload) для выхода рабочих станций во внешнюю сеть.</p>
+      <p><strong>Цель работы:</strong> Реализовать трансляцию локальных частных IP-адресов в публичный пул адресов с перегрузкой по портам (PAT overload) для выхода рабочих станций во внешнюю сеть.</p>
 
       <h3>Конфигурация трансляции NAT:</h3>
       <div class="code-terminal">
@@ -63,9 +63,6 @@ Router0(config)# interface fastEthernet 0/0
 Router0(config-if)# ip nat outside
 Router0(config-if)# exit
 Router0(config)# interface fastEthernet 0/1.2
-Router0(config-subif)# ip nat inside
-Router0(config-subif)# exit
-Router0(config)# interface fastEthernet 0/1.3
 Router0(config-subif)# ip nat inside
 Router0(config-subif)# exit
 
@@ -84,7 +81,7 @@ Router0# show ip nat translations</code></pre>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-content">
       <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
       <p>Кафедра автоматизированных систем управления (АСУ)</p>
     </div>

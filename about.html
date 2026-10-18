@@ -13,19 +13,19 @@
   <header class="site-header">
     <div class="container header-flex">
       <a href="index.html" class="brand">
-        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo" width="42" height="42">
+        <img src="img/logo.png" alt="Логотип кафедры АСУ" class="brand-logo">
         <div class="brand-text">
           <span class="univ-tag">РГРТУ им. В.Ф. Уткина · Кафедра АСУ</span>
           <span class="site-title">Администрирование в информационных системах</span>
         </div>
       </a>
-      <button type="button" id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
+      <button id="theme-btn" class="btn-theme" title="Сменить тему">🌓 Тема</button>
     </div>
   </header>
 
-  <nav class="site-nav" aria-label="Основные разделы">
+  <nav class="site-nav">
     <div class="container nav-flex">
-      <a href="about.html" class="nav-link active" aria-current="page">О дисциплине</a>
+      <a href="about.html" class="nav-link active">О дисциплине</a>
       <a href="lectures.html" class="nav-link">Теоретический курс</a>
       <a href="labs.html" class="nav-link">Лабораторный практикум</a>
       <a href="docs.html" class="nav-link">Файлы и методические указания</a>
@@ -33,7 +33,7 @@
   </nav>
 
   <main class="container main-content">
-    <nav class="breadcrumbs" aria-label="Навигационная цепочка">
+    <nav class="breadcrumbs">
       <a href="index.html">Главная</a>
       <span class="sep">/</span>
       <span>Раздел 1. О дисциплине</span>
@@ -50,7 +50,7 @@
       <section class="card">
         <span class="card-tag">Раздел 1.1</span>
         <h2>Паспорт дисциплины</h2>
-        <table class="info-table">
+        <table class="info-table" style="margin-top: 0.8rem;">
           <tbody>
             <tr>
               <td>Направление подготовки:</td>
@@ -103,7 +103,7 @@
         
         <div class="teacher-block">
           <div class="teacher-photo">
-            <img src="img/kholopov.jpg" alt="Холопов Сергей Иванович" width="110" height="135" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br>Холопов С.И.</div>';">
+            <img src="img/kholopov.jpg" alt="Холопов Сергей Иванович" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📷<br>Холопов С.И.</div>';">
           </div>
 
           <div class="teacher-info">
@@ -115,7 +115,7 @@
           </div>
         </div>
 
-        <div class="divider divider-tight">
+        <div class="divider" style="margin-top: 1rem; padding-top: 0.8rem;">
           <table class="info-table">
             <tbody>
               <tr>
@@ -145,7 +145,7 @@
       <span class="card-tag">Раздел 1.3</span>
       <h2>Цели, задачи и формируемые компетенции</h2>
       
-      <div class="mt-1">
+      <div style="margin-top: 0.8rem;">
         <h3>Цель и задачи курса</h3>
         <p>
           <strong>Основная цель дисциплины</strong> — приобретение теоретических знаний и формирование устойчивых прикладных навыков проектирования, развертывания, мониторинга и комплексной эксплуатации сетевых информационных систем корпоративного масштаба.
@@ -170,7 +170,7 @@
           <span class="sub-card-subtitle">
             ОПК-5.3. Выполняет настройку и конфигурирование программного и аппаратного обеспечения для информационных и автоматизированных систем
           </span>
-          <ul class="bullet-list list-flush">
+          <ul class="bullet-list" style="margin-bottom: 0;">
             <li><strong>Знать:</strong> принципы функционирования аппаратно-программных средств информационных и автоматизированных систем и механизмы их конфигурирования и настройки.</li>
             <li><strong>Уметь:</strong> устанавливать и конфигурировать серверы коммуникационных служб и служб общего пользования.</li>
             <li><strong>Владеть:</strong> приемами установки, конфигурирования, настройки и обслуживания компьютеров, элементов компьютерных сетей, инсталляции программного обеспечения.</li>
@@ -187,7 +187,7 @@
             <span class="sub-card-subtitle">
               ОПК-7.1. Осуществляет выбор платформ для реализации информационных систем
             </span>
-            <ul class="bullet-list list-flush">
+            <ul class="bullet-list" style="margin-bottom: 0;">
               <li><strong>Знать:</strong> виды платформ для реализации информационных систем.</li>
               <li><strong>Уметь:</strong> определять требования к аппаратному и программному обеспечениям компьютерной сети и ее элементов.</li>
               <li><strong>Владеть:</strong> навыками формирования структуры и реализации информационной системы.</li>
@@ -198,7 +198,7 @@
             <span class="sub-card-subtitle">
               ОПК-7.2. Осуществляет выбор инструментальных программно-аппаратных средств для реализации информационных систем
             </span>
-            <ul class="bullet-list list-flush">
+            <ul class="bullet-list" style="margin-bottom: 0;">
               <li><strong>Знать:</strong> типы и свойства инструментальных программно-аппаратных средств, используемых для построения информационных систем.</li>
               <li><strong>Уметь:</strong> решать задачи выбора платформы и программно-аппаратных средств для реализации информационных систем.</li>
               <li><strong>Владеть:</strong> навыками выбора программно-аппаратных средств для компьютерных систем, баз данных, платформ администрирования.</li>
@@ -210,14 +210,14 @@
         <div class="sub-card">
           <strong class="sub-card-title">В результате освоения дисциплины обучающийся должен:</strong>
           
-          <div class="summary-list">
-            <p>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.93rem; margin-top: 0.4rem;">
+            <p style="margin: 0;">
               <strong>Знать:</strong> архитектуры компьютерных сетей, аппаратных и программных средств, принципы реализации программно-аппаратных узлов информационных систем.
             </p>
-            <p>
+            <p style="margin: 0;">
               <strong>Уметь:</strong> работать за компьютером, анализировать потребности в аппаратном и программном обеспечении, определять требования к программному и аппаратному обеспечению.
             </p>
-            <p>
+            <p style="margin: 0;">
               <strong>Владеть:</strong> навыками системного и сетевого управления, использования современных средств информационных технологий.
             </p>
           </div>
@@ -227,7 +227,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-content">
       <p>© 2026 Рязанский государственный радиотехнический университет имени В.Ф. Уткина (РГРТУ)</p>
       <p>Кафедра автоматизированных систем управления (АСУ)</p>
     </div>
