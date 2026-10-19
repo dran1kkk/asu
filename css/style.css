@@ -347,7 +347,7 @@ body {
 .btn-download:hover { background-color: #003666; }
 .btn-secondary, .btn-sec { background-color: #2563eb; }
 .btn-secondary:hover, .btn-sec:hover { background-color: #1d4ed8; }
-.file-item .btn-download { min-width: 7.5rem; text-align: center; }
+.file-item .btn-download { min-width: 9.5em; text-align: center; }
 
 .code-terminal {
   background-color: #0f172a;
