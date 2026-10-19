@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Безопасные обёртки для работы с localStorage
+  // Безопасные обёртки для работы с localStorage (не падают при запрете хранилища)
   const safeGet = (key) => {
     try {
       return localStorage.getItem(key);
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       localStorage.setItem(key, val);
     } catch {
+      // Игнорируем ошибку, если хранилище заблокировано политиками браузера
     }
   };
 
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     semesterEl.textContent = `${period} ${year} г.`;
   }
 
-  // 3. Эффект 3D + Spotlight (не чаще 1 раза за кадр)
+  // 3. Эффект 3D + Spotlight (расчёт строго не чаще 1 раза за кадр)
   const canTilt = window.matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches;
 
   if (canTilt) document.querySelectorAll('.tilt-card').forEach(card => {
@@ -310,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
       resWildcard.textContent = intToIp(wildcardInt);
       resHosts.textContent = usableHosts.toLocaleString('ru-RU');
 
-      // Строгая валидация десятичных октетов без экспонент, hex и ведущих нулей
+      // Строгая валидация десятичных октетов без экспонент (1e2), hex (0x10) и ведущих нулей
       const ipParts = rawIp.split('.');
       const parsedOctets = [];
       const isValidIp = ipParts.length === 4 && ipParts.every(part => {

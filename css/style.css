@@ -490,7 +490,7 @@ body {
 
 #quiz-next-btn:active { transform: translateY(0); box-shadow: 0 2px 4px rgba(37, 99, 235, .2); }
 
-/* ================= ГЛАВНАЯ: СЕМЕСТР, 3D И ТРЕКЕР ================= */
+/* ================= ГЛАВНАЯ: СЕМЕСТР, 3D TILT И ТРЕКЕР ================= */
 
 .semester-badge {
   display: inline-flex;
@@ -833,7 +833,7 @@ html.dark-mode, body.dark-mode, .dark-mode body { background-color: #0b0f19; col
 .dark-mode .calc-input.input-error { border-color: #dc2626; }
 .dark-mode .calc-code { color: #38bdf8; background-color: #0f172a; }
 
-/* ================= УМЕНЬШЕННАЯ АНИМАЦИЯ ================= */
+/* ================= УМЕНЬШЕННАЯ АНИМАЦИЯ (настройка системы) ================= */
 
 @media (prefers-reduced-motion: reduce) {
   .status-dot, .fade-in { animation: none; }
