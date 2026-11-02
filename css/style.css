@@ -41,7 +41,7 @@ body {
   flex-shrink: 0;
 }
 
-.brand-text { display: flex; flex-direction: column; }
+.brand-text { display: flex; flex-direction: column; min-width: 0; }
 
 .univ-tag {
   display: block;
@@ -729,8 +729,9 @@ h1, h2, h3 { overflow-wrap: anywhere; }
 }
 
 @media (max-width: 768px) {
-  .lab-header, .header-flex { flex-direction: column; align-items: flex-start; }
-  .btn-theme { align-self: flex-start; }
+  .lab-header { flex-direction: column; align-items: flex-start; }
+  .brand { min-width: 0; }
+  .site-title { font-size: 1rem; }
 }
 
 @media (max-width: 520px) {
